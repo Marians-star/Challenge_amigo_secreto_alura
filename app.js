@@ -11,8 +11,23 @@ function agregarAmigo() {
     }
     console.log (amigos);
     limpiarCaja();
+    amigosEnPantalla();
+}
+
+function amigosEnPantalla () {
+    let conteo =0;
+    let listaHTML ="";
+    document.getElementById("listaAmigos").innerHTML = "";
+    while (conteo<amigos.length){
+        listaHTML += "<li>" + amigos[conteo] + "</li>";
+        conteo++
+        console.log(listaHTML);
+    console.log(conteo);
+    }
+    document.getElementById("listaAmigos").innerHTML = listaHTML;
 }
 
 function limpiarCaja (){
     let ValorCaja = document.getElementById("amigo").value ="";
 }
+
