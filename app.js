@@ -40,3 +40,4 @@ function sortearAmigo(){
         console.log(numeroElegido);
     }
 }
+
