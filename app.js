@@ -1,7 +1,9 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let amigos = [];
+let numeroElegido = 0;
 
 function agregarAmigo() {
+    if (numeroElegido ==0){
     let nombreUsuario = document.getElementById("amigo").value;
     if (nombreUsuario ==""){
         alert("Error: El espacio esta en blanco")
@@ -11,6 +13,9 @@ function agregarAmigo() {
     console.log (amigos);
     limpiarCaja();
     amigosEnPantalla();
+} else {
+    limpiarTodo();
+}
 }
 
 function amigosEnPantalla () {
@@ -34,9 +39,15 @@ function sortearAmigo(){
     if (amigos.length == 0) {
         alert("No seas tramposo, agrega un nombre")
     } else {
-        let numeroElegido = Math.floor(Math.random()*amigos.length);
+        numeroElegido = Math.floor(Math.random()*amigos.length);
         document.getElementById("listaAmigos").innerHTML = "";
         document.getElementById("resultado").innerHTML = (`El nombre elegido es ${amigos[numeroElegido]}`);
         console.log(numeroElegido);
+        numeroElegido = 0;
     }
+}
+
+function limpiarTodo (){
+    document.getElementById("listaAmigos").innerHTML = "";
+    document.getElementById("resultado").innerHTML = "";
 }
